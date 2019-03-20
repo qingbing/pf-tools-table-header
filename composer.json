@@ -27,7 +27,7 @@
         "qingbing/php-request": ">=1.0, <2.0",
         "qingbing/php-url-manager": ">=1.0, <2.0",
         "qingbing/php-web": ">=1.0, <2.0",
-        "qingbing/php-error-handler": ">=1.0, <2.0"
+        "qingbing/pf-components-error-handler": ">=1.0, <2.0"
     },
     "autoload": {
         "psr-4": {
