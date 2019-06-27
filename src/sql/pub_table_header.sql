@@ -12,9 +12,9 @@ CREATE TABLE IF NOT EXISTS `pub_header_category` (
   `description` varchar(255) NOT NULL DEFAULT '' COMMENT '表头描述',
   `sort_order` int(8) NOT NULL DEFAULT '1000' COMMENT '排序',
   `is_open` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否开放表头，否时管理员不可操作（不可见）',
-  PRIMARY KEY (`key`),
-  UNIQUE KEY (`name`),
-  KEY (`sort_order`)
+  PRIMARY KEY `pk_key`(`key`),
+  UNIQUE KEY `uk_name`(`name`),
+  KEY `idx_sort_order`(`sort_order`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='表头设置分类';
 
 -- --------------------------------------------------------
@@ -36,8 +36,8 @@ CREATE TABLE IF NOT EXISTS `pub_header_option` (
   `is_default` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否默认',
   `is_enable` tinyint(1) NOT NULL DEFAULT '1' COMMENT '是否开启',
   `is_sortable` tinyint(1) NOT NULL DEFAULT '0' COMMENT '是否可排序',
-  PRIMARY KEY (`id`),
-  KEY (`sort_order`),
-  UNIQUE KEY `key_code` (`code`,`key`),
-  UNIQUE KEY `key_label` (`label`,`key`)
+  PRIMARY KEY `pk_id`(`id`),
+  KEY `idx_sort_order`(`sort_order`),
+  UNIQUE KEY `uk_key_code` (`code`,`key`),
+  UNIQUE KEY `uk_key_label` (`label`,`key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='表头配置选项';
